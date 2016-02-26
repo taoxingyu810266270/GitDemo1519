@@ -13,6 +13,7 @@
 		A7B69CCC1C8024AC000FB576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B69CCA1C8024AC000FB576 /* Main.storyboard */; };
 		A7B69CCE1C8024AC000FB576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B69CCD1C8024AC000FB576 /* Assets.xcassets */; };
 		A7B69CD11C8024AC000FB576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B69CCF1C8024AC000FB576 /* LaunchScreen.storyboard */; };
+		A7B69CDA1C802698000FB576 /* Prosen.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69CD91C802698000FB576 /* Prosen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		A7B69CCD1C8024AC000FB576 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7B69CD01C8024AC000FB576 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7B69CD21C8024AC000FB576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7B69CD81C802698000FB576 /* Prosen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prosen.h; sourceTree = "<group>"; };
+		A7B69CD91C802698000FB576 /* Prosen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prosen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 			children = (
 				A7B69CC41C8024AC000FB576 /* AppDelegate.h */,
 				A7B69CC51C8024AC000FB576 /* AppDelegate.m */,
+				A7B69CD81C802698000FB576 /* Prosen.h */,
+				A7B69CD91C802698000FB576 /* Prosen.m */,
 				A7B69CC71C8024AC000FB576 /* ViewController.h */,
 				A7B69CC81C8024AC000FB576 /* ViewController.m */,
 				A7B69CCA1C8024AC000FB576 /* Main.storyboard */,
@@ -152,6 +157,7 @@
 			files = (
 				A7B69CC91C8024AC000FB576 /* ViewController.m in Sources */,
 				A7B69CC61C8024AC000FB576 /* AppDelegate.m in Sources */,
+				A7B69CDA1C802698000FB576 /* Prosen.m in Sources */,
 				A7B69CC31C8024AC000FB576 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +305,7 @@
 				A7B69CD71C8024AC000FB576 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
