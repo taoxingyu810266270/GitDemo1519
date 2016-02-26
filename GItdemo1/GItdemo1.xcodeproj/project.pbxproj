@@ -14,6 +14,7 @@
 		A7B69CCE1C8024AC000FB576 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B69CCD1C8024AC000FB576 /* Assets.xcassets */; };
 		A7B69CD11C8024AC000FB576 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B69CCF1C8024AC000FB576 /* LaunchScreen.storyboard */; };
 		A7B69CDD1C802828000FB576 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69CDC1C802828000FB576 /* Student.m */; };
+		A7B69CDA1C802698000FB576 /* Prosen.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69CD91C802698000FB576 /* Prosen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		A7B69CD21C8024AC000FB576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7B69CDB1C802828000FB576 /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
 		A7B69CDC1C802828000FB576 /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		A7B69CD81C802698000FB576 /* Prosen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prosen.h; sourceTree = "<group>"; };
+		A7B69CD91C802698000FB576 /* Prosen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prosen.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 				A7B69CC51C8024AC000FB576 /* AppDelegate.m */,
 				A7B69CDB1C802828000FB576 /* Student.h */,
 				A7B69CDC1C802828000FB576 /* Student.m */,
+				A7B69CD81C802698000FB576 /* Prosen.h */,
+				A7B69CD91C802698000FB576 /* Prosen.m */,
 				A7B69CC71C8024AC000FB576 /* ViewController.h */,
 				A7B69CC81C8024AC000FB576 /* ViewController.m */,
 				A7B69CCA1C8024AC000FB576 /* Main.storyboard */,
@@ -157,6 +162,7 @@
 			files = (
 				A7B69CC91C8024AC000FB576 /* ViewController.m in Sources */,
 				A7B69CC61C8024AC000FB576 /* AppDelegate.m in Sources */,
+				A7B69CDA1C802698000FB576 /* Prosen.m in Sources */,
 				A7B69CC31C8024AC000FB576 /* main.m in Sources */,
 				A7B69CDD1C802828000FB576 /* Student.m in Sources */,
 			);
