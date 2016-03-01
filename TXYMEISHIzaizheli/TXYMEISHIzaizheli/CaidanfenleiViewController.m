@@ -175,6 +175,8 @@
     vc.im = _im;
     vc.d = model.d;
     vc.i = model.i;
+    vc.hidesBottomBarWhenPushed = YES;
+
     [self.navigationController pushViewController:vc animated:YES];
     
     
@@ -310,6 +312,85 @@
         url =[NSString stringWithFormat:@"http://api.meishi.cc/v5/class_list1.php?format=json&cid=%@&step=&kw=&page=%ld&sort_sc=desc&sort=default&bcid=13&gy=&mt=&vk=%@",ss,page,vk];
     }
     
+    if (im == 3) {
+        
+        if ([title isEqualToString:@"蛋糕面包"])
+        {
+            vk = @"32eb0613a9aac4fae92760628bf2b171";
+        }else if ([title isEqualToString:@"饼干配方"])
+        {
+            vk = @"c5e14d0b285828cd4b59a50e0b566870";
+        }else if ([title isEqualToString:@"甜品点心"])
+        {
+            vk = @"fbf6f56ec592afe3313161737f461dfe";
+        }else if ([title isEqualToString:@"烘焙工具"])
+        {
+            vk = @"32fc1673e673ca316026dc0f890c731c";
+        }else if ([title isEqualToString:@"烘焙常识"])
+        {
+            vk = @"dd6ce318253ba59e0f6d09112121ca92";
+        }else if ([title isEqualToString:@"烘焙原料"])
+        {
+            vk = @"6ff85aa8e3adc1a5f404a7f1e86a02ac";
+        }
+        
+        
+        url =[NSString stringWithFormat:@"http://api.meishi.cc/v5/class_list1.php?format=json&cid=%@&step=&kw=&page=%ld&sort_sc=desc&sort=default&bcid=13&gy=&mt=&vk=%@",ss,page,vk];
+    }
+
+    
+//    人群
+    if (im == 6) {
+        
+        if ([title isEqualToString:@"孕妇"])
+        {
+            vk = @"2b86c20f8c7fb9ba4704d9042d72b233";
+        }else if ([title isEqualToString:@"产妇"])
+        {
+            vk = @"28ab229232600af0eb7c20abf6b9d0aa";
+        }else if ([title isEqualToString:@"幼儿"])
+        {
+            vk = @"0b66d485afb7bdd57ebd182da1686762";
+        }else if ([title isEqualToString:@"哺乳期"])
+        {
+            vk = @"1d51e60e90d51a2866bef9447b2ceb1b";
+        }else if ([title isEqualToString:@"婴儿"])
+        {
+            vk = @"ce0871f53ae6af402e752bad0407f670";
+        }else if ([title isEqualToString:@"老人"])
+        {
+            vk = @"4182ae84029ef0e6cd03c65d6cf125c3";
+        }else if ([title isEqualToString:@"青少年"])
+        {
+            vk = @"cd57e5914b240f22a294bc9df8be5aef";
+        }else if ([title isEqualToString:@"运动员"])
+        {
+            vk = @"a4e4ced9f9fd5c71baf1e41087b79212";
+        }else if ([title isEqualToString:@"围孕期"])
+        {
+            vk = @"89ff35be80c954ef8608436fc942cee8";
+        }else if ([title isEqualToString:@"学龄前儿童"])
+        {
+            vk = @"d6982c8978cbedc7054a4b8d900d8bac";
+        }else if ([title isEqualToString:@"学龄期儿童"])
+        {
+            vk = @"b505f6dd9dd34a7270db9c98cf267cc9";
+        }else if ([title isEqualToString:@"高温环境作业人群"])
+        {
+            vk = @"7a4bb6c785728ef4d781c66bb4ab2502";
+        }else if ([title isEqualToString:@"低温环境作业人群"])
+        {
+            vk = @"1c0673b0ae11ca070f073f4c36fd8a79";
+        }else if ([title isEqualToString:@"接触电离辐射人员"])
+        {
+            vk = @"b35adf48abc07e60b4f5b32dbc68c83e";
+        }else if ([title isEqualToString:@"接触化学毒素人员"])
+        {
+            vk = @"067855b00dce8afc82268ea41e182cc1";
+        }
+        url =[NSString stringWithFormat:@"http://api.meishi.cc/v5/shiliao_list1.php?format=json&cid=%@&step=&kw=&page=%ld&sort_sc=desc&sort=default&gy=&mt=&st=3&vk=%@",d,page,vk];
+    }
+
     if (im ==9) {
         if ([title isEqualToString:@"川菜"])
         {
@@ -672,67 +753,67 @@
             vk = @"bfd03a2603b1061c6164bef65e15abfe";
         }else if ([title isEqualToString:@"补血"])
         {
-            vk = @"fcf21671f1c6b07fb96fa6ef0823cc78";
+            vk = @"4d2e82dd447482f7348c283a92cd2b07";
         }else if ([title isEqualToString:@"哮喘"])
         {
-            vk = @"b1c671dc945148424b510f00a071055b";
+            vk = @"97ecc105eab71be1955e09ad2a48bbfe";
         }else if ([title isEqualToString:@"感冒"])
         {
-            vk = @"1bb5f09094e6061269730a4cc9f7778a";
+            vk = @"fcf21671f1c6b07fb96fa6ef0823cc78";
         }else if ([title isEqualToString:@"腹泻"])
         {
-            vk = @"8f814d5254e88e066f0d0989290828b4";
+            vk = @"b1c671dc945148424b510f00a071055b";
         }else if ([title isEqualToString:@"癫痫"])
         {
-            vk = @"86a35a8252f1f697654ab43f6820676f";
+            vk = @"1bb5f09094e6061269730a4cc9f7778a";
         }else if ([title isEqualToString:@"水肿"])
         {
-            vk = @"bca688f559428c42124472e62791ac59";
+            vk = @"8f814d5254e88e066f0d0989290828b4";
         }else if ([title isEqualToString:@"便秘"])
         {
-            vk = @"0bc5ef38769d082a7a5cd88b791fcbcf";
+            vk = @"86a35a8252f1f697654ab43f6820676f";
         }else if ([title isEqualToString:@"失眠"])
         {
-            vk = @"ac150679565c17b9603e4b055e732af7";
+            vk = @"bca688f559428c42124472e62791ac59";
         }else if ([title isEqualToString:@"健忘"])
         {
-            vk = @"cf602560d4226edcf21822a4c5b22b80";
+            vk = @"0bc5ef38769d082a7a5cd88b791fcbcf";
         }else if ([title isEqualToString:@"利尿"])
         {
-            vk = @"e474e87ac3b0370ffd26a0c4159c450b";
+            vk = @"ac150679565c17b9603e4b055e732af7";
         }else if ([title isEqualToString:@"心悸"])
         {
-            vk = @"ba235f55469024a136be1c5398175679";
+            vk = @"cf602560d4226edcf21822a4c5b22b80";
         }else if ([title isEqualToString:@"痢疾"])
         {
-            vk = @"f7edf7543f867e43bfda7b12e890b05f";
+            vk = @"e474e87ac3b0370ffd26a0c4159c450b";
         }else if ([title isEqualToString:@"呕吐"])
         {
-            vk = @"caefab2b323f68aab7588da1c4426781";
+            vk = @"ba235f55469024a136be1c5398175679";
         }else if ([title isEqualToString:@"胃调养"])
         {
-            vk = @"c31beb72a97f0e7b22761854391868ed";
+            vk = @"f7edf7543f867e43bfda7b12e890b05f";
         }else if ([title isEqualToString:@"咳喘"])
         {
-            vk = @"730e92c0e0a9f1f4bd13de8eb2d61c79";
+            vk = @"caefab2b323f68aab7588da1c4426781";
         }else if ([title isEqualToString:@"气血双补"])
         {
-            vk = @"5b92b10ff00c494144bca6d0cf332040";
+            vk = @"c31beb72a97f0e7b22761854391868ed";
         }else if ([title isEqualToString:@"活血化瘀"])
         {
-            vk = @"872d6a509c93d18a440d5bf1688ae431";
+            vk = @"730e92c0e0a9f1f4bd13de8eb2d61c79";
         }else if ([title isEqualToString:@"止血调理"])
         {
-            vk = @"13cb47bf59c5d45ff852eb2f7e37b12b";
+            vk = @"5b92b10ff00c494144bca6d0cf332040";
         }else if ([title isEqualToString:@"疏肝理气"])
         {
-            vk = @"5d5926611f51244696838360b749cdd7";
+            vk = @"872d6a509c93d18a440d5bf1688ae431";
         }else if ([title isEqualToString:@"阳痿早泄"])
         {
-            vk = @"865149933d2ce4e15f148b4607406272";
+            vk = @"13cb47bf59c5d45ff852eb2f7e37b12b";
         }else if ([title isEqualToString:@"自汗盗汗"])
         {
-            vk = @"12e8353c44c8e14eb32a8bf016251aec";
+            vk = @"5d5926611f51244696838360b749cdd7";
         }
         
         url =[NSString stringWithFormat:@"http://api.meishi.cc/v5/shiliao_list1.php?format=json&cid=%@&step=&kw=&page=%ld&sort_sc=desc&sort=default&gy=&mt=&st=3&vk=%@",d,page,vk];
@@ -740,85 +821,85 @@
     }
     if (im ==14)
     {
-        if ([title isEqualToString:@"中风"])
+        if ([title isEqualToString:@"美容"])
         {
             vk = @"d7e3c4ba82d32ce9bfec2171e0104f24";
-        }else if ([title isEqualToString:@"肠炎"])
+        }else if ([title isEqualToString:@"减肥"])
         {
             vk = @"8081e69de7b1bff1ab759d64a58a29f8";
-        }else if ([title isEqualToString:@"肾炎"])
+        }else if ([title isEqualToString:@"乌发"])
         {
             vk = @"689421968be4f4a00006a04e8e10e8ae";
-        }else if ([title isEqualToString:@"痛风"])
+        }else if ([title isEqualToString:@"明目"])
         {
             vk = @"8bdf98337869fe42f2671cc600ab278b";
-        }else if ([title isEqualToString:@"麻疹"])
+        }else if ([title isEqualToString:@"防暑"])
         {
             vk = @"a3e8fc03d0ea733ccc8d6a5338f714a3";
-        }else if ([title isEqualToString:@"肝炎"])
+        }else if ([title isEqualToString:@"脚气"])
         {
             vk = @"e95aa39f0052c249702812ed16dae12f";
-        }else if ([title isEqualToString:@"胃炎"])
+        }else if ([title isEqualToString:@"祛痰"])
         {
             vk = @"34af8f4ea46e9c53d712f00b42feedd0";
-        }else if ([title isEqualToString:@"贫血"])
+        }else if ([title isEqualToString:@"通乳"])
         {
             vk = @"28d92432ff969b5c401bc87c849fd569";
-        }else if ([title isEqualToString:@"痔疮"])
+        }else if ([title isEqualToString:@"头疼"])
         {
             vk = @"3560c393443444600577fdf0869f70ca";
-        }else if ([title isEqualToString:@"痛经"])
+        }else if ([title isEqualToString:@"解酒"])
         {
             vk = @"3ab011dc43fb78889d9872b2389bbba5";
-        }else if ([title isEqualToString:@"咽炎"])
+        }else if ([title isEqualToString:@"增肥"])
         {
             vk = @"6ff1c7be05613faec06e6be423120161";
-        }else if ([title isEqualToString:@"耳鸣"])
+        }else if ([title isEqualToString:@"夜尿多"])
         {
             vk = @"dac22405c43033029b987c0728494aff";
-        }else if ([title isEqualToString:@"术后"])
+        }else if ([title isEqualToString:@"延缓衰老"])
         {
             vk = @"b080b808c15ec9be0e3446ccf6b91169";
-        }else if ([title isEqualToString:@"前列腺"])
+        }else if ([title isEqualToString:@"消化不良"])
         {
             vk = @"2ee33525956e9833d22e2d689a11ce72";
-        }else if ([title isEqualToString:@"糖尿病"])
+        }else if ([title isEqualToString:@"神经衰弱"])
         {
             vk = @"4647f14de9502036653e897c9b56600d";
-        }else if ([title isEqualToString:@"高血压"])
+        }else if ([title isEqualToString:@"补虚养身"])
         {
             vk = @"eb392913f0872ed74e2d413c0d1f3a96";
-        }else if ([title isEqualToString:@"高血脂"])
+        }else if ([title isEqualToString:@"补阳壮阳"])
         {
             vk = @"e491a73365757c52da6097942e962e25";
-        }else if ([title isEqualToString:@"冠心病"])
+        }else if ([title isEqualToString:@"滋阴补肾"])
         {
             vk = @"e3cdfd815d7500f93d414d41033ede88";
-        }else if ([title isEqualToString:@"胆石症"])
+        }else if ([title isEqualToString:@"壮腰健肾"])
         {
             vk = @"63811818a559b3c066301812faa78e98";
-        }else if ([title isEqualToString:@"肝硬化"])
+        }else if ([title isEqualToString:@"清热解毒"])
         {
             vk = @"51939bccff9fae3d09516e89939b50ce";
-        }else if ([title isEqualToString:@"结核病"])
+        }else if ([title isEqualToString:@"产后调理"])
         {
             vk = @"90bb0b95b9993a7c729044fb486c52fc";
-        }else if ([title isEqualToString:@"甲状腺"])
+        }else if ([title isEqualToString:@"不孕不育"])
         {
             vk = @"cd4aaf7d44f353705e621395762dbdd7";
-        }else if ([title isEqualToString:@"更年期"])
+        }else if ([title isEqualToString:@"健脾开胃"])
         {
             vk = @"cad5e5341259565f7f882b3459d375b7";
-        }else if ([title isEqualToString:@"关节炎"])
+        }else if ([title isEqualToString:@"营养不良"])
         {
             vk = @"03e70259afa7d5e7134ef809d11cf888";
-        }else if ([title isEqualToString:@"肺气肿"])
+        }else if ([title isEqualToString:@"益智补脑"])
         {
             vk = @"7c19873bf2e6bc59a58a603e660197d9";
-        }else if ([title isEqualToString:@"防癌抗癌"])
+        }else if ([title isEqualToString:@"肢寒畏冷"])
         {
             vk = @"50f89745fa83f0b6dc43c27f340181bd";
-        }else if ([title isEqualToString:@"动脉硬化"])
+        }else if ([title isEqualToString:@"清热去火"])
         {
             vk = @"dd247d049a170dd34e787482631f77c2";
         }

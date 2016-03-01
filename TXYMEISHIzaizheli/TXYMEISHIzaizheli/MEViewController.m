@@ -2,7 +2,7 @@
 //  MEViewController.m
 //  TXYMEISHIzaizheli
 //
-//  Created by qianfeng1 on 16/2/24.
+//  Created by qianfeng1 on 16/3/1.
 //  Copyright © 2016年 陶星宇. All rights reserved.
 //
 
@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,6 +14,7 @@
 #import "ZTModel.h"
 #import "ZTTableViewCell.h"
 #import "CaidanfenleiViewController.h"
+#import "VideoViewController.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UIScrollView *scroller;
@@ -91,7 +92,7 @@
  *  创建scrollView
  */
 -(void)createScrollView {
-    _tableView = [[UITableView alloc]initWithFrame:self.view.frame style:(UITableViewStyleGrouped)];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height-113) style:(UITableViewStyleGrouped)];
     _tableView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_tableView];
     self.tableView.delegate = self;
@@ -129,13 +130,13 @@
             
             UILabel *iamgetitle =[[UILabel alloc]initWithFrame:CGRectMake(10, 80, view.frame.size.width-20, 30)];
             iamgetitle.text =model.title;
-            
+            iamgetitle.textColor = [UIColor yellowColor];
             iamgetitle.font = [UIFont systemFontOfSize:25];
             
             UILabel *iamgedescr =[[UILabel alloc]initWithFrame:CGRectMake(10, 110, view.frame.size.width-20, 20)];
             
             iamgedescr.text =model.descr;
-            
+            iamgedescr.textColor = [UIColor yellowColor];
             iamgedescr.font = [UIFont systemFontOfSize:17];
 
             [imageview addSubview:iamgetitle];
@@ -144,13 +145,13 @@
             w++;
         }
         UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(i*self.view.frame.size.width, 450, self.view.frame.size.width, 50)];
-        title.font = [UIFont systemFontOfSize:40];
+        title.font = [UIFont systemFontOfSize:30];
         title.text =subModel.title;
 
         title.textAlignment = NSTextAlignmentCenter;
         
         UILabel *detail = [[UILabel alloc]initWithFrame:CGRectMake(i*self.view.frame.size.width, 500, self.view.frame.size.width, 50)];
-        detail.font = [UIFont systemFontOfSize:23];
+        detail.font = [UIFont systemFontOfSize:17];
         detail.text = subModel.sub_title;
         detail.textAlignment = NSTextAlignmentCenter;
         detail.numberOfLines = 0;
@@ -276,17 +277,21 @@
         NSString *DertailId = model.id;
         JiruTuijinDetailViewController *vc = [[JiruTuijinDetailViewController alloc]init];
         vc.url = [NSString stringWithFormat:kDetailView,DertailId];
+        vc.hidesBottomBarWhenPushed = YES;
+
         [self.navigationController pushViewController:vc animated:YES];
     
     }else if(tap.view.tag>150) {
         if (tap.view.tag == 151) {
             CaidanfenleiViewController *vc = [[CaidanfenleiViewController alloc]init];
-            
+            vc.hidesBottomBarWhenPushed = YES;
+
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (tap.view.tag == 152) {
-            CaidanfenleiViewController *vc = [[CaidanfenleiViewController alloc]init];
-            
+            VideoViewController *vc = [[VideoViewController alloc]init];
+//            隐藏界面分栏
+            vc.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (tap.view.tag == 153) {

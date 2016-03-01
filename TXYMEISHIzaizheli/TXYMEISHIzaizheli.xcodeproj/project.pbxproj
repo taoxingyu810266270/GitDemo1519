@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70172DE1C855D5B003B7A35 /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70172DC1C855D5B003B7A35 /* MEViewController.m */; };
+		A70172DF1C855D5B003B7A35 /* MEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70172DD1C855D5B003B7A35 /* MEViewController.xib */; };
+		A76159DE1C84934E005D81AF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A76159DD1C84934D005D81AF /* VideoViewController.m */; };
 		A77A54091C828815004E4398 /* CaiDanDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A77A54071C828815004E4398 /* CaiDanDetailTableViewCell.m */; };
 		A77A540A1C828815004E4398 /* CaiDanDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77A54081C828815004E4398 /* CaiDanDetailTableViewCell.xib */; };
 		A77A540F1C828BEB004E4398 /* ms_caipu_level_un@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A77A540B1C828BEB004E4398 /* ms_caipu_level_un@2x.png */; };
@@ -31,7 +34,6 @@
 		A7B69B461C7D9F38000FB576 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B451C7D9F38000FB576 /* BaseViewController.m */; };
 		A7B69B4A1C7D9F99000FB576 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B491C7D9F99000FB576 /* RecommendViewController.m */; };
 		A7B69B4D1C7DA004000FB576 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B4C1C7DA004000FB576 /* TabBarViewController.m */; };
-		A7B69B591C7DC443000FB576 /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B581C7DC443000FB576 /* MEViewController.m */; };
 		A7B69B8B1C7DDF7F000FB576 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B651C7DDF7F000FB576 /* AFHTTPRequestOperation.m */; };
 		A7B69B8C1C7DDF7F000FB576 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B671C7DDF7F000FB576 /* AFHTTPRequestOperationManager.m */; };
 		A7B69B8D1C7DDF7F000FB576 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B69B691C7DDF7F000FB576 /* AFHTTPSessionManager.m */; };
@@ -148,6 +150,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A70172DB1C855D5B003B7A35 /* MEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEViewController.h; sourceTree = "<group>"; };
+		A70172DC1C855D5B003B7A35 /* MEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEViewController.m; sourceTree = "<group>"; };
+		A70172DD1C855D5B003B7A35 /* MEViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEViewController.xib; sourceTree = "<group>"; };
+		A76159DC1C84934D005D81AF /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		A76159DD1C84934D005D81AF /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		A77A54061C828815004E4398 /* CaiDanDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaiDanDetailTableViewCell.h; sourceTree = "<group>"; };
 		A77A54071C828815004E4398 /* CaiDanDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaiDanDetailTableViewCell.m; sourceTree = "<group>"; };
 		A77A54081C828815004E4398 /* CaiDanDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaiDanDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -181,8 +188,6 @@
 		A7B69B4B1C7DA004000FB576 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		A7B69B4C1C7DA004000FB576 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		A7B69B501C7DA0D6000FB576 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
-		A7B69B571C7DC443000FB576 /* MEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEViewController.h; sourceTree = "<group>"; };
-		A7B69B581C7DC443000FB576 /* MEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEViewController.m; sourceTree = "<group>"; };
 		A7B69B641C7DDF7F000FB576 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		A7B69B651C7DDF7F000FB576 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		A7B69B661C7DDF7F000FB576 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -380,6 +385,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70172DA1C855CF3003B7A35 /* 菜单分类详情 */ = {
+			isa = PBXGroup;
+			children = (
+				A7F3F90C1C81940D00009713 /* CaidanDetailViewController.h */,
+				A7F3F90D1C81940D00009713 /* CaidanDetailViewController.m */,
+				A77A54061C828815004E4398 /* CaiDanDetailTableViewCell.h */,
+				A77A54071C828815004E4398 /* CaiDanDetailTableViewCell.m */,
+				A77A54081C828815004E4398 /* CaiDanDetailTableViewCell.xib */,
+				A77A54251C829AED004E4398 /* CaidanDetailModel.h */,
+				A77A54261C829AED004E4398 /* CaidanDetailModel.m */,
+			);
+			name = "菜单分类详情";
+			sourceTree = "<group>";
+		};
+		A76159DB1C849011005D81AF /* 视频菜谱 */ = {
+			isa = PBXGroup;
+			children = (
+				A76159DC1C84934D005D81AF /* VideoViewController.h */,
+				A76159DD1C84934D005D81AF /* VideoViewController.m */,
+			);
+			name = "视频菜谱";
+			sourceTree = "<group>";
+		};
 		A7B6951E1C7D9A9A000FB576 = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +455,7 @@
 		A7B69B471C7D9F5E000FB576 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				A76159DB1C849011005D81AF /* 视频菜谱 */,
 				A7B69CDE1C805816000FB576 /* 菜单分类 */,
 				A7B69C8E1C7F3D69000FB576 /* Cell */,
 				A7B69C8D1C7F3D5F000FB576 /* Model */,
@@ -468,8 +497,9 @@
 		A7B69B561C7DC3F6000FB576 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
-				A7B69B571C7DC443000FB576 /* MEViewController.h */,
-				A7B69B581C7DC443000FB576 /* MEViewController.m */,
+				A70172DB1C855D5B003B7A35 /* MEViewController.h */,
+				A70172DC1C855D5B003B7A35 /* MEViewController.m */,
+				A70172DD1C855D5B003B7A35 /* MEViewController.xib */,
 			);
 			name = "我的";
 			sourceTree = "<group>";
@@ -679,6 +709,7 @@
 		A7B69CDE1C805816000FB576 /* 菜单分类 */ = {
 			isa = PBXGroup;
 			children = (
+				A70172DA1C855CF3003B7A35 /* 菜单分类详情 */,
 				A7B69CEC1C8083E7000FB576 /* Property List.plist */,
 				A7B69CDF1C805841000FB576 /* CaidanfenleiViewController.h */,
 				A7B69CE01C805841000FB576 /* CaidanfenleiViewController.m */,
@@ -691,13 +722,6 @@
 				A7B69CEF1C8087C7000FB576 /* CaipuidaquanModel.m */,
 				A7B69CF11C8087DE000FB576 /* XifenleiModel.h */,
 				A7B69CF21C8087DE000FB576 /* XifenleiModel.m */,
-				A7F3F90C1C81940D00009713 /* CaidanDetailViewController.h */,
-				A7F3F90D1C81940D00009713 /* CaidanDetailViewController.m */,
-				A77A54061C828815004E4398 /* CaiDanDetailTableViewCell.h */,
-				A77A54071C828815004E4398 /* CaiDanDetailTableViewCell.m */,
-				A77A54081C828815004E4398 /* CaiDanDetailTableViewCell.xib */,
-				A77A54251C829AED004E4398 /* CaidanDetailModel.h */,
-				A77A54261C829AED004E4398 /* CaidanDetailModel.m */,
 			);
 			name = "菜单分类";
 			sourceTree = "<group>";
@@ -903,6 +927,7 @@
 				A7B69D531C80990C000FB576 /* ms_fenlei_9@3x.png in Resources */,
 				A7B69C8A1C7F3717000FB576 /* ZTTableViewCell.xib in Resources */,
 				A77A541E1C828D45004E4398 /* star_off_36_1@3x.png in Resources */,
+				A70172DF1C855D5B003B7A35 /* MEViewController.xib in Resources */,
 				A7B69D7C1C80992B000FB576 /* ms_fenlei_10@2x.png in Resources */,
 				A7B69D791C80992B000FB576 /* ms_fenlei_7@2x.png in Resources */,
 				A7B69D7D1C80992B000FB576 /* ms_fenlei_11@2x.png in Resources */,
@@ -942,12 +967,14 @@
 				A7B69BBD1C7DE722000FB576 /* JSONAPI.m in Sources */,
 				A7B69D901C814620000FB576 /* XifenleiCollectionViewCell.m in Sources */,
 				A7B69BBB1C7DE722000FB576 /* JSONModelError.m in Sources */,
+				A70172DE1C855D5B003B7A35 /* MEViewController.m in Sources */,
 				A7B69B991C7DDF7F000FB576 /* UIButton+AFNetworking.m in Sources */,
 				A7B69B901C7DDF7F000FB576 /* AFURLConnectionOperation.m in Sources */,
 				A7F809C91C82CAB5000E0121 /* JHRefreshBaseView.m in Sources */,
 				A7F809CC1C82CAB5000E0121 /* JHRefreshHeaderView.m in Sources */,
 				A7F809CA1C82CAB5000E0121 /* JHRefreshConfig.m in Sources */,
 				A7B69BC41C7DE74F000FB576 /* RecommendModel.m in Sources */,
+				A76159DE1C84934E005D81AF /* VideoViewController.m in Sources */,
 				A7F809C51C82CAB5000E0121 /* JHRefreshAmazingAniView.m in Sources */,
 				A7F809C71C82CAB5000E0121 /* JHRefreshCommonAniView.m in Sources */,
 				A7B69C891C7F3717000FB576 /* ZTTableViewCell.m in Sources */,
@@ -978,7 +1005,6 @@
 				A7B69BE71C7DF270000FB576 /* SDWebImageDownloader.m in Sources */,
 				A7B69BE31C7DF270000FB576 /* NSData+ImageContentType.m in Sources */,
 				A7B69BBE1C7DE722000FB576 /* JSONHTTPClient.m in Sources */,
-				A7B69B591C7DC443000FB576 /* MEViewController.m in Sources */,
 				A7B69BBC1C7DE722000FB576 /* NSArray+JSONModel.m in Sources */,
 				A7B6952C1C7D9A9B000FB576 /* main.m in Sources */,
 				A7B69C651C7EFECC000FB576 /* SubTitleModel.m in Sources */,
