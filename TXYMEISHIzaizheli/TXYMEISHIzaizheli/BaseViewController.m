@@ -17,10 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%265/255.0 green:arc4random()%265/255.0 blue:arc4random()%265/255.0 alpha:1.0];
+//    self.view.backgroundColor = [UIColor colorWithRed:arc4random()%265/255.0 green:arc4random()%265/255.0 blue:arc4random()%265/255.0 alpha:1.0];
 //    self.navigationController.navigationBar.translucent = NO;
-    self.tabBarController.tabBar.backgroundColor = [UIColor orangeColor];
-    
+//    改变分栏的颜色
+    self.tabBarController.tabBar.barTintColor = [UIColor orangeColor];
+//    改变导航的颜色
+     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
 }
 -(NSString*)iniURL {
     

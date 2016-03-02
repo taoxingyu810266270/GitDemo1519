@@ -909,10 +909,11 @@
         
         
     }
-
     
     
-    NSLog(@"%@",url);
+    
+    
+//    NSLog(@"%@",url);
        return url;
 }
 

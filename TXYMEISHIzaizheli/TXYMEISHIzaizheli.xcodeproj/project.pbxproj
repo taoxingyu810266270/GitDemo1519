@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		A70172DE1C855D5B003B7A35 /* MEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A70172DC1C855D5B003B7A35 /* MEViewController.m */; };
 		A70172DF1C855D5B003B7A35 /* MEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70172DD1C855D5B003B7A35 /* MEViewController.xib */; };
+		A701735D1C85B633003B7A35 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A701735C1C85B633003B7A35 /* VideoModel.m */; };
+		A70173611C85BE37003B7A35 /* VideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A701735F1C85BE37003B7A35 /* VideoTableViewCell.m */; };
+		A70173621C85BE37003B7A35 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70173601C85BE37003B7A35 /* VideoTableViewCell.xib */; };
+		A70173651C85C33C003B7A35 /* videoicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A70173631C85C33C003B7A35 /* videoicon@2x.png */; };
+		A70173661C85C33C003B7A35 /* videoicon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A70173641C85C33C003B7A35 /* videoicon@3x.png */; };
 		A76159DE1C84934E005D81AF /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A76159DD1C84934D005D81AF /* VideoViewController.m */; };
 		A77A54091C828815004E4398 /* CaiDanDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A77A54071C828815004E4398 /* CaiDanDetailTableViewCell.m */; };
 		A77A540A1C828815004E4398 /* CaiDanDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77A54081C828815004E4398 /* CaiDanDetailTableViewCell.xib */; };
@@ -26,6 +31,7 @@
 		A77A54221C828D45004E4398 /* star_on_36.png in Resources */ = {isa = PBXBuildFile; fileRef = A77A541B1C828D45004E4398 /* star_on_36.png */; };
 		A77A54241C828DB7004E4398 /* nd_icon_36.png in Resources */ = {isa = PBXBuildFile; fileRef = A77A54231C828DB7004E4398 /* nd_icon_36.png */; };
 		A77A54271C829AED004E4398 /* CaidanDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A77A54261C829AED004E4398 /* CaidanDetailModel.m */; };
+		A7A300EA1C866A4100792CBB /* FujinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7A300E91C866A4100792CBB /* FujinViewController.m */; };
 		A7B6952C1C7D9A9B000FB576 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6952B1C7D9A9B000FB576 /* main.m */; };
 		A7B6952F1C7D9A9B000FB576 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B6952E1C7D9A9B000FB576 /* AppDelegate.m */; };
 		A7B695351C7D9A9B000FB576 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7B695331C7D9A9B000FB576 /* Main.storyboard */; };
@@ -153,6 +159,13 @@
 		A70172DB1C855D5B003B7A35 /* MEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEViewController.h; sourceTree = "<group>"; };
 		A70172DC1C855D5B003B7A35 /* MEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEViewController.m; sourceTree = "<group>"; };
 		A70172DD1C855D5B003B7A35 /* MEViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MEViewController.xib; sourceTree = "<group>"; };
+		A701735B1C85B633003B7A35 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		A701735C1C85B633003B7A35 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		A701735E1C85BE37003B7A35 /* VideoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewCell.h; sourceTree = "<group>"; };
+		A701735F1C85BE37003B7A35 /* VideoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewCell.m; sourceTree = "<group>"; };
+		A70173601C85BE37003B7A35 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+		A70173631C85C33C003B7A35 /* videoicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videoicon@2x.png"; sourceTree = "<group>"; };
+		A70173641C85C33C003B7A35 /* videoicon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videoicon@3x.png"; sourceTree = "<group>"; };
 		A76159DC1C84934D005D81AF /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		A76159DD1C84934D005D81AF /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		A77A54061C828815004E4398 /* CaiDanDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaiDanDetailTableViewCell.h; sourceTree = "<group>"; };
@@ -173,6 +186,8 @@
 		A77A54231C828DB7004E4398 /* nd_icon_36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nd_icon_36.png; sourceTree = "<group>"; };
 		A77A54251C829AED004E4398 /* CaidanDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaidanDetailModel.h; sourceTree = "<group>"; };
 		A77A54261C829AED004E4398 /* CaidanDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaidanDetailModel.m; sourceTree = "<group>"; };
+		A7A300E81C866A4100792CBB /* FujinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FujinViewController.h; sourceTree = "<group>"; };
+		A7A300E91C866A4100792CBB /* FujinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FujinViewController.m; sourceTree = "<group>"; };
 		A7B695271C7D9A9B000FB576 /* TXYMEISHIzaizheli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TXYMEISHIzaizheli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B6952B1C7D9A9B000FB576 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A7B6952D1C7D9A9B000FB576 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -404,8 +419,22 @@
 			children = (
 				A76159DC1C84934D005D81AF /* VideoViewController.h */,
 				A76159DD1C84934D005D81AF /* VideoViewController.m */,
+				A701735B1C85B633003B7A35 /* VideoModel.h */,
+				A701735C1C85B633003B7A35 /* VideoModel.m */,
+				A701735E1C85BE37003B7A35 /* VideoTableViewCell.h */,
+				A701735F1C85BE37003B7A35 /* VideoTableViewCell.m */,
+				A70173601C85BE37003B7A35 /* VideoTableViewCell.xib */,
 			);
 			name = "视频菜谱";
+			sourceTree = "<group>";
+		};
+		A7A300E71C866A1300792CBB /* 附近 */ = {
+			isa = PBXGroup;
+			children = (
+				A7A300E81C866A4100792CBB /* FujinViewController.h */,
+				A7A300E91C866A4100792CBB /* FujinViewController.m */,
+			);
+			name = "附近";
 			sourceTree = "<group>";
 		};
 		A7B6951E1C7D9A9A000FB576 = {
@@ -455,6 +484,7 @@
 		A7B69B471C7D9F5E000FB576 /* 推荐 */ = {
 			isa = PBXGroup;
 			children = (
+				A7A300E71C866A1300792CBB /* 附近 */,
 				A76159DB1C849011005D81AF /* 视频菜谱 */,
 				A7B69CDE1C805816000FB576 /* 菜单分类 */,
 				A7B69C8E1C7F3D69000FB576 /* Cell */,
@@ -729,6 +759,8 @@
 		A7B69CF91C8090D9000FB576 /* 菜谱分类 */ = {
 			isa = PBXGroup;
 			children = (
+				A70173631C85C33C003B7A35 /* videoicon@2x.png */,
+				A70173641C85C33C003B7A35 /* videoicon@3x.png */,
 				A77A540B1C828BEB004E4398 /* ms_caipu_level_un@2x.png */,
 				A77A54131C828CEF004E4398 /* sx_icon_36.png */,
 				A77A54231C828DB7004E4398 /* nd_icon_36.png */,
@@ -902,6 +934,7 @@
 				A7B69D7E1C80992B000FB576 /* ms_fenlei_11@3x.png in Resources */,
 				A7B69D811C80992B000FB576 /* ms_fenlei_13@2x.png in Resources */,
 				A7B69D591C80991A000FB576 /* ms_fenlei_7@3x.png in Resources */,
+				A70173661C85C33C003B7A35 /* videoicon@3x.png in Resources */,
 				A77A541D1C828D45004E4398 /* star_off_36_1@2x.png in Resources */,
 				A7B69C701C7F05C6000FB576 /* home_reciped.png in Resources */,
 				A77A54201C828D45004E4398 /* star_on_36_1@2x.png in Resources */,
@@ -924,9 +957,11 @@
 				A7B69D4D1C8098D6000FB576 /* ms_fenlei_3@3x.png in Resources */,
 				A7B69CED1C8083E7000FB576 /* Property List.plist in Resources */,
 				A77A54141C828CEF004E4398 /* sx_icon_36.png in Resources */,
+				A70173621C85BE37003B7A35 /* VideoTableViewCell.xib in Resources */,
 				A7B69D531C80990C000FB576 /* ms_fenlei_9@3x.png in Resources */,
 				A7B69C8A1C7F3717000FB576 /* ZTTableViewCell.xib in Resources */,
 				A77A541E1C828D45004E4398 /* star_off_36_1@3x.png in Resources */,
+				A70173651C85C33C003B7A35 /* videoicon@2x.png in Resources */,
 				A70172DF1C855D5B003B7A35 /* MEViewController.xib in Resources */,
 				A7B69D7C1C80992B000FB576 /* ms_fenlei_10@2x.png in Resources */,
 				A7B69D791C80992B000FB576 /* ms_fenlei_7@2x.png in Resources */,
@@ -960,6 +995,7 @@
 				A7B69B4D1C7DA004000FB576 /* TabBarViewController.m in Sources */,
 				A7B69B9B1C7DDF7F000FB576 /* UIProgressView+AFNetworking.m in Sources */,
 				A7B6952F1C7D9A9B000FB576 /* AppDelegate.m in Sources */,
+				A7A300EA1C866A4100792CBB /* FujinViewController.m in Sources */,
 				A7B69B981C7DDF7F000FB576 /* UIAlertView+AFNetworking.m in Sources */,
 				A7B69CF01C8087C7000FB576 /* CaipuidaquanModel.m in Sources */,
 				A7B69B8E1C7DDF7F000FB576 /* AFNetworkReachabilityManager.m in Sources */,
@@ -976,6 +1012,7 @@
 				A7B69BC41C7DE74F000FB576 /* RecommendModel.m in Sources */,
 				A76159DE1C84934E005D81AF /* VideoViewController.m in Sources */,
 				A7F809C51C82CAB5000E0121 /* JHRefreshAmazingAniView.m in Sources */,
+				A70173611C85BE37003B7A35 /* VideoTableViewCell.m in Sources */,
 				A7F809C71C82CAB5000E0121 /* JHRefreshCommonAniView.m in Sources */,
 				A7B69C891C7F3717000FB576 /* ZTTableViewCell.m in Sources */,
 				A7B69BE61C7DF270000FB576 /* SDWebImageDecoder.m in Sources */,
@@ -996,6 +1033,7 @@
 				A7B69BE41C7DF270000FB576 /* SDImageCache.m in Sources */,
 				A7B69C681C7EFEF1000FB576 /* FenleiModel.m in Sources */,
 				A7B69BC11C7DE722000FB576 /* JSONValueTransformer.m in Sources */,
+				A701735D1C85B633003B7A35 /* VideoModel.m in Sources */,
 				A7B69BE81C7DF270000FB576 /* SDWebImageDownloaderOperation.m in Sources */,
 				A7B69B8D1C7DDF7F000FB576 /* AFHTTPSessionManager.m in Sources */,
 				A7B69BEF1C7DF270000FB576 /* UIImageView+WebCache.m in Sources */,
