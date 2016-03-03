@@ -15,6 +15,8 @@
 #import "ZTTableViewCell.h"
 #import "CaidanfenleiViewController.h"
 #import "VideoViewController.h"
+#import "FujinViewController.h"
+#import "ShiHuaViewController.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UIScrollView *scroller;
@@ -226,7 +228,7 @@
     
     
     UILabel *zaocan = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width/4*2, self.view.frame.size.width/4, self.view.frame.size.width/4, 30)];
-    zaocan.text = fenleimodel3.title;
+    zaocan.text = @"食话";
     zaocan.textAlignment = NSTextAlignmentCenter;
 
     
@@ -295,13 +297,13 @@
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (tap.view.tag == 153) {
-            CaidanfenleiViewController *vc = [[CaidanfenleiViewController alloc]init];
-            
+            ShiHuaViewController *vc = [[ShiHuaViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         }
         if (tap.view.tag == 154) {
-            CaidanfenleiViewController *vc = [[CaidanfenleiViewController alloc]init];
-            
+            FujinViewController *vc = [[FujinViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
+
             [self.navigationController pushViewController:vc animated:YES];
         }
 

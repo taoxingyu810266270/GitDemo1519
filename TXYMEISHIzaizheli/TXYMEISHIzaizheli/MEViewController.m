@@ -9,6 +9,14 @@
 #import "MEViewController.h"
 
 @interface MEViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *fabuLabel;
+@property (weak, nonatomic) IBOutlet UIButton *maicaiqingdanLabel;
+@property (weak, nonatomic) IBOutlet UIButton *caogaoxiangLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dingdanLabel;
+@property (weak, nonatomic) IBOutlet UIButton *downloadLabel;
+@property (weak, nonatomic) IBOutlet UIButton *zhanneixinLabel;
+@property (weak, nonatomic) IBOutlet UIButton *shoucangLabel;
+@property (weak, nonatomic) IBOutlet UIButton *setLabel;
 
 @end
 
@@ -16,7 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    _fabuLabel.imageEdgeInsets = UIEdgeInsetsMake(0, 20, 40, 20);
 }
 
 - (void)didReceiveMemoryWarning {

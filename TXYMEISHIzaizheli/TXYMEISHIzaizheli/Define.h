@@ -8,6 +8,8 @@
 
 #ifndef Define_h
 #define Define_h
+#define kShiHuaTop @"http://api.meishi.cc/v5/meishiquan_index3.php?format=json"
+#define KShiHuaBottom @"http://api.meishi.cc/v5/hot_topic_more2.php?format=json&page=%ld"
 //上边15图片
 #define kRecomment @"http://api.meishi.cc/v5/index4.php?format=json&page=%d"
 //15图片详情界面
