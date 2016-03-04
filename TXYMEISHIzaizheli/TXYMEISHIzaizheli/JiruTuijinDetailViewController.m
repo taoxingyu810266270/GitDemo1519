@@ -8,8 +8,15 @@
 
 #import "JiruTuijinDetailViewController.h"
 #import "UIWebView+AFNetworking.h"
-@interface JiruTuijinDetailViewController ()<UIWebViewDelegate>
-@property (nonatomic)UIWebView *myWebView;
+#import "MMProgressHUD.h"
+#import "MMLinearProgressView.h"
+#import <WebKit/WebKit.h>
+@interface JiruTuijinDetailViewController ()<WKNavigationDelegate>
+{
+    WKWebView *_webView;
+}
+@property (nonatomic,strong) NSTimer *timer;
+
 @end
 
 @implementation JiruTuijinDetailViewController
@@ -19,24 +26,48 @@
 self.navigationController.navigationBarHidden = NO;
 //    self.tabBarController.tabBar.hidden =YES;
 //    self.tabBarController.tabBar.alpha = 0;
-    _myWebView = [[UIWebView alloc]initWithFrame:self.view.frame];
+    _webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
+    //加载网页 html格式的网页 也可以加载html 格式的字符串 显示成网页
     
-    _myWebView.delegate = self;
-    
+    [self.view addSubview:_webView];
+    //设置代理
+    _webView.navigationDelegate = self;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_url]];
-    
-    [_myWebView loadRequest:request];
-    [self.view addSubview:_myWebView];
+    [_webView loadRequest:request];
 
 }
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"%@",error);
-
-
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"webView 开始加载");
+    if (!self.timer) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
+    }
+    //设置下载进度
+    [MMProgressHUD setProgressViewClass:[MMLinearProgressView class]];
+    [MMProgressHUD showDeterminateProgressWithTitle:@"下载" status:@"loading...."];
 }
--(void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"hello");
+- (void)updateTimer:(NSTimer *)timer {
+    //UIWebView
+    //修改进度--->获取webView的下载进度_webView.estimatedProgress
+    [MMProgressHUD updateProgress:_webView.estimatedProgress];
 }
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"webView 完成加载");
+    if (self.timer) {
+        [self.timer invalidate];//终止
+        self.timer = nil;
+    }
+    [MMProgressHUD dismissWithSuccess:@"下载完成"];
+}
+- (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    NSLog(@"webView 加载失败");
+    if (self.timer) {
+        [self.timer invalidate];//终止
+        self.timer = nil;
+    }
+    [MMProgressHUD dismissWithError:@"下载失败"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

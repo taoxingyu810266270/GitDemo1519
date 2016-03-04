@@ -7,18 +7,25 @@
 //
 
 #import "JSONModel.h"
+#import "ImgsModel.h"
+
+@protocol ImgsModel <NSObject>
+@end
 
 @interface HotTopicModel : JSONModel
+
+
+
 @property (nonatomic, strong) NSDictionary *user_info;
-@property (nonatomic, strong) NSString *gid;
-@property (nonatomic, strong) NSString *tid;
+@property (nonatomic, copy) NSString *gid;
+@property (nonatomic, copy) NSString *tid;
 @property (nonatomic, strong) NSDictionary *from;
-@property (nonatomic, strong) NSString *img_num;
-@property (nonatomic, strong) NSString *summary;
-@property (nonatomic, strong) NSArray *imgs;
-@property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSString *comment_num;
-@property (nonatomic, strong) NSString *ding_num;
+@property (nonatomic, copy) NSString *img_num;
+@property (nonatomic, copy) NSString *summary;
+@property (nonatomic, strong) NSArray<ImgsModel> *imgs;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic, copy) NSString *comment_num;
+@property (nonatomic, copy) NSString *ding_num;
 
 
 /*

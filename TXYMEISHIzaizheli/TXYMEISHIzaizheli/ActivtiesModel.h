@@ -9,10 +9,10 @@
 #import "JSONModel.h"
 
 @interface ActivtiesModel : JSONModel
-@property (nonatomic, strong) NSString *hid;
-@property (nonatomic, strong) NSString *type;
-@property (nonatomic, strong) NSString *huodong_type;
-@property (nonatomic, strong) NSString *img;
+@property (nonatomic, copy) NSString *hid;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *huodong_type;
+@property (nonatomic, copy) NSString *img;
 
 
 /*"hid": "97",

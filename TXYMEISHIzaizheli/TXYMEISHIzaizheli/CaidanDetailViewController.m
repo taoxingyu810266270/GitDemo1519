@@ -25,11 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _page = 1;
-    NSLog(@"%ld",(long)_im);
     _isPullDown = YES;
      _caidan = [[CaidanfenleiViewController alloc]init];
     self.navigationItem.title = _Title;
-        NSLog(@"%@",_url);
     [self createtableView];
     [self loadDataSource];
     [self createPullFootRefresh];

@@ -23,7 +23,9 @@
 @implementation CaidanfenleiViewController
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
+    self.title = @"菜单分类";
     self.view.backgroundColor = [UIColor colorWithRed:0.85 green:0.85 blue:0.85 alpha:1.0];
     [self createTableview];
     [self createcollectionView];

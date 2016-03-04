@@ -9,10 +9,10 @@
 #import "JSONModel.h"
 
 @interface ColumnModel : JSONModel
-@property (nonatomic, strong) NSString *gid;
-@property (nonatomic, strong) NSString *type;
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *img;
+@property (nonatomic, copy) NSString *gid;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *img;
 
 //"gid": "20",
 //"type": "1",

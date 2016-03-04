@@ -132,14 +132,14 @@
             
             UILabel *iamgetitle =[[UILabel alloc]initWithFrame:CGRectMake(10, 80, view.frame.size.width-20, 30)];
             iamgetitle.text =model.title;
-            iamgetitle.textColor = [UIColor yellowColor];
-            iamgetitle.font = [UIFont systemFontOfSize:25];
+            iamgetitle.textColor = [UIColor blackColor];
+            iamgetitle.font = [UIFont systemFontOfSize:20];
             
             UILabel *iamgedescr =[[UILabel alloc]initWithFrame:CGRectMake(10, 110, view.frame.size.width-20, 20)];
             
             iamgedescr.text =model.descr;
-            iamgedescr.textColor = [UIColor yellowColor];
-            iamgedescr.font = [UIFont systemFontOfSize:17];
+            iamgedescr.textColor = [UIColor blackColor];
+            iamgedescr.font = [UIFont systemFontOfSize:12];
 
             [imageview addSubview:iamgetitle];
             [imageview addSubview:iamgedescr];
@@ -382,7 +382,8 @@
     ZTModel *model = self.jinrituijiandataSource[indexPath.row];
     vc.url = model.f_s_type;
     
-    
+    vc.hidesBottomBarWhenPushed = YES;
+
     [self.navigationController pushViewController:vc animated:YES];
 
 }
