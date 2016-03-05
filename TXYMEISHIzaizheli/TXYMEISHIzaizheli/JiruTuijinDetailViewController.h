@@ -7,7 +7,8 @@
 //
 
 #import "BaseViewController.h"
-
+#import "CaidanDetailModel.h"
 @interface JiruTuijinDetailViewController : BaseViewController
 @property (nonatomic, copy) NSString *url;
+@property (nonatomic, strong)CaidanDetailModel *model;
 @end

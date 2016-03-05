@@ -9,5 +9,8 @@
 #import "ImgsModel.h"
 
 @implementation ImgsModel
-
++(BOOL)propertyIsOptional:(NSString *)propertyName {\
+    
+    return YES;
+}
 @end

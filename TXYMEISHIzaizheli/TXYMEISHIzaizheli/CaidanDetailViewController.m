@@ -10,6 +10,9 @@
 #import "AFNetworking.h"
 #import "CaiDanDetailTableViewCell.h"
 #import "JHRefresh.h"
+#import "JiruTuijinDetailViewController.h"
+#import "Define.h"
+#import "CacheManager.h"
 @interface CaidanDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)CaidanfenleiViewController *caidan;
 @property (nonatomic, strong)UITableView *tableView;
@@ -87,7 +90,8 @@
     [mset addObject:@"application/json"];
     manger.responseSerializer.acceptableContentTypes = mset;
     [manger GET:_url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+//        将数据保存到沙盒中
+        [CacheManager saveData:responseObject withUrl:_url];
         NSLog(@"%@",responseObject);
         NSDictionary *obj = responseObject[@"obj"];
         
@@ -124,6 +128,8 @@
     
 }
 
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
 
@@ -144,7 +150,17 @@
 
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    CaidanDetailModel *model = self.dataSource[indexPath.row];
+    NSString * url = [NSString stringWithFormat:kDetailView,model.id];
+    JiruTuijinDetailViewController *vc = [[JiruTuijinDetailViewController alloc]init];
+    vc.url = url;
+    vc.model = model;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 
+
+}
 
 -(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

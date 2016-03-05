@@ -7,7 +7,6 @@
 //
 
 #import "BaseViewController.h"
-
 @interface BaseViewController ()
 
 @end
@@ -21,9 +20,22 @@
 //    self.navigationController.navigationBar.translucent = NO;
 //    改变分栏的颜色
     self.tabBarController.tabBar.barTintColor = [UIColor orangeColor];
+    
+    
 //    改变导航的颜色
      self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    
+    //添加一个通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeColor:) name:@"changeColor" object:nil];
+    
 }
+-(void)changeColor:(NSNotification*)sender {
+    NSLog(@"我接受到通知了");
+        UIColor *color = sender.object;
+     self.navigationController.navigationBar.barTintColor = color;
+    
+}
+
 -(NSString*)iniURL {
     
     

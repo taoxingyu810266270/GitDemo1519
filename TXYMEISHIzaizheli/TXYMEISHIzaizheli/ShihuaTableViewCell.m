@@ -26,35 +26,48 @@
     NSString *username = userinfo[@"user_name"];
     _namelabel.text = username;
     NSDictionary *from = model.from;
-    NSLog(@"%@",from);
     NSString *name = from[@"name"];
-    NSLog(@"%@",name);
     _fromlabel.text = [NSString stringWithFormat:@"%@ 来自%@",model.time,name];
-    NSLog(@"%ld",model.imgs.count);
     if(model.imgs.count>=1)
     {
         ImgsModel *imodel = model.imgs[0];
         [_iamgeLabel1 sd_setImageWithURL:[NSURL URLWithString:imodel.small]];
+        
+        
+        CGRect imageframe = _iamgeLabel1.frame;
+        imageframe.size = CGSizeMake(imodel.width, imodel.height);
+        _iamgeLabel1.frame = imageframe;
+        
+        
+        
+        
 
     }
     if(model.imgs.count>=2)
     {
         ImgsModel *imodel = model.imgs[1];
         [_iamgeLable2 sd_setImageWithURL:[NSURL URLWithString:imodel.small]];
+        CGRect imageframe = _iamgeLable2.frame;
+        imageframe.size = CGSizeMake(imodel.width, imodel.height);
+        _iamgeLable2.frame = imageframe;
 
     }
     if(model.imgs.count>=3)
     {
         ImgsModel *imodel = model.imgs[2];
         [_iamgeLabel3 sd_setImageWithURL:[NSURL URLWithString:imodel.small]];
-
+        CGRect imageframe = _iamgeLabel3.frame;
+        imageframe.size = CGSizeMake(imodel.width, imodel.height);
+        _iamgeLabel3.frame = imageframe;
 
     }
     if(model.imgs.count==4)
     {
         ImgsModel *imodel = model.imgs[3];
         [_imageLabel4 sd_setImageWithURL:[NSURL URLWithString:imodel.small]];
-
+        CGRect imageframe = _imageLabel4.frame;
+        imageframe.size = CGSizeMake(imodel.width, imodel.height);
+        _imageLabel4.frame = imageframe;
     }
 
     

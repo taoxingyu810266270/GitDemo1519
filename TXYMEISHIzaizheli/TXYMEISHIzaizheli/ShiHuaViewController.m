@@ -32,16 +32,50 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _hotTopicdataSource = [NSMutableArray new];
     _page = 1;
     self.view.backgroundColor= [UIColor redColor];
     
-//    [self createTableView];
     [self loadSource];
-    [self createPullFootRefresh];
     
+    [self createPullFootRefresh];
     [self createPullHeadRefresh];
-
 }
+
+
+/**
+ *  上拉加载
+ */
+-(void)createPullFootRefresh {
+    __weak ShiHuaViewController *weakself = self;
+    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
+        _isloadMore = YES;
+        weakself.page++;
+        [weakself loadSource];
+    }];
+}
+/**
+ *  下拉刷新
+ */
+-(void)createPullHeadRefresh {
+    __weak ShiHuaViewController *weakself = self;
+    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
+        _isPullDown = YES;
+        weakself.page=1;
+        [weakself loadSource];
+    }];
+}
+-(void)EndRefresh {
+    if (_isloadMore) {
+        [self.tableView footerEndRefreshing];
+        _isloadMore = NO;
+    }else if (_isPullDown)
+    {
+        [self.tableView headerEndRefreshingWithResult:(JHRefreshResultSuccess)];
+        _isPullDown = NO;
+    }
+}
+
 /**
  *  添加数据源
  */
@@ -55,95 +89,45 @@
     
     manager.responseSerializer.acceptableContentTypes = mset;
 [manager GET:kShiHuaTop parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"%@",responseObject);
     NSArray *activities2 = responseObject[@"activities2"];
     NSArray *Column = responseObject[@"column"];
     
     NSArray *hottopic = responseObject[@"hot_topic"];
+      _activities2dataSource = [ActivtiesModel arrayOfModelsFromDictionaries:activities2];
+    NSError *error = nil;
+      _columndataSource = [ColumnModel  arrayOfModelsFromDictionaries:Column];
+    _hotTopicdataSource = [HotTopicModel arrayOfModelsFromDictionaries:hottopic error:&error];
+        if (_isPullDown) {
     _activities2dataSource = [ActivtiesModel arrayOfModelsFromDictionaries:activities2];
     
     _columndataSource = [ColumnModel arrayOfModelsFromDictionaries:Column];
     _hotTopicdataSource = [HotTopicModel arrayOfModelsFromDictionaries:hottopic];
-    if (_isPullDown) {
-    _activities2dataSource = [ActivtiesModel arrayOfModelsFromDictionaries:activities2];
-    
-    _columndataSource = [ColumnModel arrayOfModelsFromDictionaries:Column];
-    _hotTopicdataSource = [HotTopicModel arrayOfModelsFromDictionaries:hottopic];
-    
-    NSLog(@"第一个行数据%@",_hotTopicdataSource);
-        
-    }
-    [self EndRefresh];
+
+    NSLog(@"%@",error);
+
+        }else if(_isloadMore){
+    NSString *str = [NSString stringWithFormat:KShiHuaBottom,_page];
+    [manager GET:str parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSArray *hottopic = responseObject[@"hot_topic"];
+    NSError *error = nil;
+    [_hotTopicdataSource addObjectsFromArray: [HotTopicModel arrayOfModelsFromDictionaries:hottopic error:&error]];
+    NSLog(@"%@",error);
     [self createTableView];
+                
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+      {
+        NSLog(@"%@",error);
+     }];
+     }
     
+    [self EndRefresh];
+
+    [self createTableView];
+
 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"%@",error);
 }];
-    
-    if (_page >=2) {
-        NSString *url = [NSString stringWithFormat:KShiHuaBottom,_page];
-        [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"%@",responseObject);
-            
-            
-            NSArray *hottopic = responseObject[@"hot_topic"];
-            if (_isloadMore) {
-                [_hotTopicdataSource addObject: [HotTopicModel arrayOfModelsFromDictionaries:hottopic]];
-            }
-            
-            [self EndRefresh];
-//            NSLog(@"第一个行数据%@",_hotTopicdataSource);
-            
-            [self createTableView];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"%@",error);
-        }];
-
-    }
 }
-
-/**
- *  上拉加载
- */
--(void)createPullFootRefresh {
-    __weak ShiHuaViewController *weakself = self;
-    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
-        _isloadMore = YES;
-        weakself.page++;
-        [weakself loadSource];
-    }];
-    
-    
-}
-
-/**
- *  下拉刷新
- */
--(void)createPullHeadRefresh {
-    
-    __weak ShiHuaViewController *weakself = self;
-    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
-        _isPullDown = YES;
-        weakself.page=1;
-        [weakself loadSource];
-        
-    }];
-    
-    
-}
-
--(void)EndRefresh {
-    if (_isloadMore) {
-        [self.tableView footerEndRefreshing];
-        _isloadMore = NO;
-    }else if (_isPullDown)
-    {
-        [self.tableView headerEndRefreshingWithResult:(JHRefreshResultSuccess)];
-        _isPullDown = NO;
-    }
-}
-
 
 
 /**
@@ -172,7 +156,7 @@
         UIImageView *iamgeView = [[UIImageView alloc]initWithFrame:CGRectMake(25+i*self.view.frame.size.width/4, 220, self.view.frame.size.width/8, self.view.frame.size.width/8)];
         [iamgeView sd_setImageWithURL:[NSURL URLWithString:model.img]];
         
-        UILabel *name = [[UILabel alloc]initWithFrame:CGRectMake(25+i*self.view.frame.size.width/4, 220+self.view.frame.size.width/8, self.view.frame.size.width/8,30)];
+        UILabel *name = [[UILabel alloc]initWithFrame:CGRectMake(25+i*self.view.frame.size.width/4, 220+self.view.frame.size.width/8, self.view.frame.size.width/8+20,30)];
         name.text = model.name;
         name.font = [UIFont systemFontOfSize:12];
         [heardView addSubview:name];
@@ -189,6 +173,20 @@
 
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    return 1;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+
+    UIView *View = [[UIView alloc]init];
+    
+    
+
+    return View;
+
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 

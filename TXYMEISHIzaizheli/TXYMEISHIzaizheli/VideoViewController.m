@@ -13,6 +13,7 @@
 #import "JHRefresh.h"
 #import "VideoTableViewCell.h"
 #import "JiruTuijinDetailViewController.h"
+#import "CacheManager.h"
 @interface VideoViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)NSMutableArray *dataSource;
@@ -30,52 +31,52 @@
     _page = 1;
     [self createtableView];
     [self loadDataSource];
-    [self createPullFootRefresh];
-    [self createPullHeadRefresh];
+//    [self createPullFootRefresh];
+//    [self createPullHeadRefresh];
 
 }
 
-/**
- *  上拉加载
- */
--(void)createPullFootRefresh {
-    __weak VideoViewController *weakself = self;
-    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
-        _isloadMore = YES;
-        weakself.page++;
-        [weakself loadDataSource];
-    }];
-    
-    
-}
-/**
- *  下拉刷新
- */
--(void)createPullHeadRefresh {
-    
-    __weak VideoViewController *weakself = self;
-    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
-        _isPullDown = YES;
-        weakself.page=1;
-        [weakself loadDataSource];
-        
-    }];
-    
-    
-}
--(void)EndRefresh {
-    if (_isloadMore) {
-        [self.tableView footerEndRefreshing];
-        _isloadMore = NO;
-    }else if (_isPullDown)
-    {
-        [self.tableView headerEndRefreshingWithResult:(JHRefreshResultSuccess)];
-        _isPullDown = NO;
-    }
-    
-    
-    
-}
+///**
+// *  上拉加载
+// */
+//-(void)createPullFootRefresh {
+//    __weak VideoViewController *weakself = self;
+//    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
+//        _isloadMore = YES;
+//        weakself.page++;
+//        [weakself loadDataSource];
+//    }];
+//    
+//    
+//}
+///**
+// *  下拉刷新
+// */
+//-(void)createPullHeadRefresh {
+//    
+//    __weak VideoViewController *weakself = self;
+//    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
+//        _isPullDown = YES;
+//        weakself.page=1;
+//        [weakself loadDataSource];
+//        
+//    }];
+//    
+//    
+//}
+//-(void)EndRefresh {
+//    if (_isloadMore) {
+//        [self.tableView footerEndRefreshing];
+//        _isloadMore = NO;
+//    }else if (_isPullDown)
+//    {
+//        [self.tableView headerEndRefreshingWithResult:(JHRefreshResultSuccess)];
+//        _isPullDown = NO;
+//    }
+//    
+//    
+//    
+//}
 
 /**
  *  创建tableView
@@ -112,24 +113,29 @@
     
     
 [manger GET:[self indata] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    
+//    将数据保存到沙盒中
+    [CacheManager saveData:responseObject withUrl:[self indata]];
     NSLog(@"%@",responseObject);
     NSDictionary *obj = responseObject[@"obj"];
     NSString *title = obj[@"title"];
     self.title = title;
        NSArray *data = obj[@"data"];
     self.dataSource = [VideoModel arrayOfModelsFromDictionaries:data ];
- 
+    NSError *error= nil;
+    
     if (_isPullDown) {
         
-        self.dataSource = [VideoModel arrayOfModelsFromDictionaries:data ];
+        self.dataSource = [VideoModel arrayOfModelsFromDictionaries:data error:&error ];
+        NSLog(@"%@",error);
     }else if (_isloadMore)
     {
-        [self.dataSource addObjectsFromArray:[VideoModel arrayOfModelsFromDictionaries:data]];
+        [self.dataSource addObjectsFromArray:[VideoModel arrayOfModelsFromDictionaries:data error:&error]];
+        NSLog(@"%@",error);
     }
     
+    
+//    [self EndRefresh];
     [self.tableView reloadData];
-    [self EndRefresh];
     
     
 } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -163,7 +169,7 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 
-    return 180;
+    return 145;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

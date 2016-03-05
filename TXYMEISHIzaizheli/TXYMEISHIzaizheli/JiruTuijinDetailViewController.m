@@ -11,6 +11,7 @@
 #import "MMProgressHUD.h"
 #import "MMLinearProgressView.h"
 #import <WebKit/WebKit.h>
+#import "MyfavourViewController.h"
 @interface JiruTuijinDetailViewController ()<WKNavigationDelegate>
 {
     WKWebView *_webView;
@@ -34,8 +35,20 @@ self.navigationController.navigationBarHidden = NO;
     _webView.navigationDelegate = self;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:_url]];
     [_webView loadRequest:request];
+    
+    UIBarButtonItem *favourbtn = [[UIBarButtonItem alloc]initWithTitle:@"收藏" style:(UIBarButtonItemStylePlain) target:self action:@selector(favourbtnPressed:)];
+    
+    self.navigationItem.rightBarButtonItem = favourbtn;
 
 }
+-(void)favourbtnPressed:(UIBarButtonItem*)item {
+    MyfavourViewController *vc = [[MyfavourViewController alloc]init];
+    
+    [vc.dataSource addObject:_model];
+    
+    
+}
+
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     NSLog(@"webView 开始加载");
     if (!self.timer) {

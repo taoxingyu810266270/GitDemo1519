@@ -9,8 +9,8 @@
 #import "JSONModel.h"
 
 @interface ImgsModel : JSONModel
-@property (nonatomic, copy) NSString *height;
-@property (nonatomic, copy) NSString *width;
+@property (nonatomic) NSInteger height;
+@property (nonatomic) NSInteger width;
 @property (nonatomic, copy) NSString *big;
 @property (nonatomic, copy) NSString *small;
 

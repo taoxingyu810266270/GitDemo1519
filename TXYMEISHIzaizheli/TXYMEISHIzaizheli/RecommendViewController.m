@@ -17,6 +17,7 @@
 #import "VideoViewController.h"
 #import "FujinViewController.h"
 #import "ShiHuaViewController.h"
+#import "CacheManager.h"
 @interface RecommendViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UIScrollView *scroller;
@@ -36,9 +37,18 @@
     _page = 1;
     [self createDataSource];
 //    [self createScrollView];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeColor:) name:@"changeColor" object:nil];
+}
+-(void)changeColor:(NSNotification*)sender {
+    NSLog(@"我接受到通知了");
+    UIColor *color = sender.object;
+    self.navigationController.navigationBar.barTintColor = color;
+    self.tableView.backgroundColor = color;
+    
+    ZTTableViewCell *cell = [ZTTableViewCell alloc];
+    cell.backgroundColor = [UIColor grayColor];
     
 }
-
 
 -(NSString*)iniURL {
     NSString *url = [NSString stringWithFormat:kRecomment,_page];
@@ -59,7 +69,9 @@
     
     manager.responseSerializer.acceptableContentTypes = mset;
     [manager GET:[self iniURL] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"%@",responseObject);
+//        将数据保存到沙盒中
+        [CacheManager saveData:responseObject withUrl:[self iniURL]];
+//        NSLog(@"%@",responseObject);
         NSDictionary *obj = responseObject[@"obj"];
                 NSArray *san_can = obj[@"san_can"];
                 NSArray *san_can_title = obj[@"san_can_titles"];
@@ -80,7 +92,7 @@
                 [self createScrollView];
            [self.tableView reloadData];
 //                NSLog(@"%@",self.san_candataSource);
-        NSLog(@"%@",self.san_canTitledataSource);
+//        NSLog(@"%@",self.san_canTitledataSource);
 
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
@@ -121,7 +133,7 @@
             imageview.backgroundColor = [UIColor colorWithRed:arc4random()%256/255.0 green:arc4random()%256/255.0 blue:arc4random()%256/255.0 alpha:1.0];
             
             NSString *image = model.titlepic;
-            NSLog(@"%@",image);
+//            NSLog(@"%@",image);
             [imageview sd_setImageWithURL:[NSURL URLWithString:image]];
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
             tap.numberOfTapsRequired = 1;
@@ -273,7 +285,7 @@
     if(tap.view.tag<120) {
     
         NSInteger tag =   tap.view.tag;
-        NSLog(@"%ld",tag);
+//        NSLog(@"%ld",tag);
         SancanModel *model = self.san_candataSource[tag-100];
         
         NSString *DertailId = model.id;
