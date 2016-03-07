@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _tableView.backgroundColor = [UIColor whiteColor];
     [self dataInit];
     [self creatTableView];
 }
@@ -36,9 +37,9 @@
 
 - (void)dataInit {
     _dataArr = [[NSMutableArray alloc] init];
-    NSArray *arr1 = @[@"推送设置",@"开启夜间模式",@"开启关注通知",@"清除缓存"];
+    NSArray *arr1 = @[@"我的收藏",@"开启夜间模式",@"开启关注通知",@"清除缓存"];
     [_dataArr addObject:arr1];
-    NSArray *arr2 = @[@"推荐美食",@"官方推荐",@"官方微博"];
+    NSArray *arr2 = @[@"推荐美食",@"官方推荐",@"腾讯微博"];
     [_dataArr addObject:arr2];
     
     [_tableView reloadData];
@@ -73,24 +74,23 @@
 }
 //开关按钮
 - (void)swClick:(UISwitch *)sw {
-    if (sw.tag == 1002) {
-        if (_tableView.backgroundColor == [UIColor whiteColor]) {
-            _tableView.backgroundColor = [UIColor blackColor];
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"changeColor" object:[UIColor blackColor]];
-            self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-            self.tabBarController.tabBar.barTintColor = [UIColor blackColor];
-            
-            
-        }else {
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"changeColor" object:[UIColor orangeColor]];
-            self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
-            self.tabBarController.tabBar.barTintColor = [UIColor orangeColor];
-            _tableView.backgroundColor = [UIColor whiteColor];
-            
+   
+        if (sw.tag == 1002) {
+            if (_tableView.backgroundColor == [UIColor whiteColor]) {
+                _tableView.backgroundColor = [UIColor blackColor];
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"changeColor" object:[UIColor blackColor]];
+                self.navigationController.navigationBar.barTintColor = [UIColor blackColor];
+                self.tabBarController.tabBar.barTintColor = [UIColor blackColor];
+                
+                
+            }else {
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"changeColor" object:[UIColor orangeColor]];
+                self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+                self.tabBarController.tabBar.barTintColor = [UIColor orangeColor];
+                _tableView.backgroundColor = [UIColor whiteColor];
+                
+            }
         }
-
-    }
-    
 }
 
 //获取所有缓存大小
@@ -148,11 +148,11 @@
         //1分区
         if (indexPath.row == 0) {
             //推荐
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/ai-xian-mian-re-men-ying-yong/id468587292?mt=8"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.meishij.net"]];
         }else if (indexPath.row == 1) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/ai-xian-mian-re-men-ying-yong/id468587292?mt=8"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.meishij.net"]];
         }else {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/candou"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://t.qq.com/meishijie"]];
         }
         
     }

@@ -19,7 +19,7 @@
 -(void)createiamge {
     _iamgeView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width,200)];
     _title = [[UILabel alloc]initWithFrame:CGRectMake(10, 150, _iamgeView.frame.size.width, 50)];
-    
+    _title.textColor = [UIColor whiteColor];
     
     [_iamgeView addSubview:_title];
     

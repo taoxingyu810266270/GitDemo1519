@@ -17,10 +17,16 @@
 /**
  插入数据
  */
+
+- (NSArray*)readModelsWithRecordType:(NSString *)type;
+
+- (BOOL)isExistInfoForid:(NSString *)spotId;
 -(void)insertStudent:(CaidanDetailModel*)caidan;
+
 ///**
 // 修改数据
 // */
+
 //-(void)updateStudentAge:(CaidanDetailModel*)caidan;
 /**
  删除数据

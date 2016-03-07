@@ -50,16 +50,10 @@
         
         //        如果数据库打了 就去创建表
         if ([_dbBase open]) {
-            NSString *sql = @"CREATE TABLE IF NOT EXISTS T_CaidanfenDetail(c_id TEXT PRIMARY KEY NOT NULL ,c_title TEXT ,c_titlepic TEXT ,c_gongyi TEXT, c_kouwei TEXT, c_mt TEXT, c_step TEXT)";
             
-//            @property (nonatomic, copy) NSString *id;
-//            @property (nonatomic, copy) NSString *title;
-//            @property (nonatomic, copy) NSString *titlepic;
-//            @property (nonatomic, copy) NSString *gongyi;
-//            @property (nonatomic, copy) NSString *kouwei;
-//            @property (nonatomic, copy) NSString *mt;
-//            @property (nonatomic) int rate;
-//            @property (nonatomic, copy) NSString *step;
+            
+            NSString *sql = @"CREATE TABLE IF NOT EXISTS T_CaidanfenDetail1(c_id TEXT PRIMARY KEY NOT NULL ,c_title TEXT ,c_titlepic TEXT ,c_gongyi TEXT, c_kouwei TEXT, c_mt TEXT, c_step TEXT,type Varchar(1024))";
+            
             
             if ([_dbBase executeUpdate:sql]) {
                 NSLog(@"创建表成功");
@@ -81,12 +75,77 @@
     }
     return self;
 }
+- (NSArray*)readModelsWithRecordType:(NSString *)type {
+    
+    FMResultSet *rs = nil;
+    
+    NSMutableArray *arr = [NSMutableArray array];
+    
+    if ([type isEqualToString:@"story"]) {
+        
+        NSString *sql = @"select * from T_CaidanfenDetail1 where type = ?";
+        
+        rs = [_dbBase executeQuery:sql,type];
+        
+        while ([rs next]) {
+            
+            CaidanDetailModel *model = [[CaidanDetailModel alloc]init];
+            
+            model.id = [rs stringForColumn:@"c_id"];
+            
+            model.title = [rs stringForColumn:@"c_title"];
+            model.titlepic = [rs stringForColumn:@"c_titlepic"];
+            model.gongyi = [rs stringForColumn:@"c_gongyi"];
+            model.kouwei = [rs stringForColumn:@"c_kouwei"];
+            model.mt = [rs stringForColumn:@"c_mt"];
+            model.step = [rs stringForColumn:@"c_step"];
+
+            
+            
+            
+            [arr addObject:model];
+            
+        }
+        
+    }
+    
+    NSLog(@"%@VVVVVVVVVVVVVVV",arr);
+    
+    return arr;
+    
+    
+}
+
+//根据指定的类型 返回 这条记录在数据库中是否存在
+- (BOOL)isExistInfoForid:(NSString *)spotId{
+    
+    
+    NSString *sql;
+    
+    FMResultSet *rs = nil;
+    
+    
+    sql = @"select * from T_CaidanfenDetail1 where c_id= ?";
+    
+    rs = [_dbBase executeQuery:sql,spotId];
+    
+    
+    if ([rs next]) {//查看是否存在  下条记录  如果存在  肯定数据库中有记录
+        
+        return YES;
+        
+    }else {
+        
+        return NO;
+    }
+    
+}
 
 /**
  插入数据
  */
 -(void)insertStudent:(CaidanDetailModel*)caidan {
-    NSString *sql = [NSString stringWithFormat:@"INSERT INTO T_CaidanfenDetail(c_id,c_title,c_titlepic,c_gongyi,c_kouwei, c_mt, c_step ) VALUES ('%@','%@','%@','%@','%@','%@','%@')",caidan.id,caidan.title,caidan.titlepic,caidan.gongyi,caidan.kouwei,caidan.mt,caidan.step];
+    NSString *sql = [NSString stringWithFormat:@"INSERT INTO T_CaidanfenDetail1(c_id,c_title,c_titlepic,c_gongyi,c_kouwei, c_mt, c_step ,type) VALUES ('%@','%@','%@','%@','%@','%@','%@','%@')",caidan.id,caidan.title,caidan.titlepic,caidan.gongyi,caidan.kouwei,caidan.mt,caidan.step,@"story"];
     BOOL res  = [self.dbBase executeUpdate:sql];
     if (res) {
         NSLog(@"插入数据成功");
@@ -116,7 +175,7 @@
  */
 -(void)deleteStudent:(CaidanDetailModel*)caidan {
     
-    NSString *sql = [ NSString stringWithFormat: @"DELETE FROM T_CaidanfenDetail WHERE c_id = '%@'",caidan.id ];
+    NSString *sql = [ NSString stringWithFormat: @"DELETE FROM T_CaidanfenDetail1 WHERE c_id = '%@'",caidan.id ];
     BOOL res = [self.dbBase executeUpdate:sql];
     if (res) {
         NSLog(@"删除成功");

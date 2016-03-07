@@ -31,52 +31,52 @@
     _page = 1;
     [self createtableView];
     [self loadDataSource];
-//    [self createPullFootRefresh];
-//    [self createPullHeadRefresh];
+    [self createPullFootRefresh];
+    [self createPullHeadRefresh];
 
 }
 
-///**
-// *  上拉加载
-// */
-//-(void)createPullFootRefresh {
-//    __weak VideoViewController *weakself = self;
-//    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
-//        _isloadMore = YES;
-//        weakself.page++;
-//        [weakself loadDataSource];
-//    }];
-//    
-//    
-//}
-///**
-// *  下拉刷新
-// */
-//-(void)createPullHeadRefresh {
-//    
-//    __weak VideoViewController *weakself = self;
-//    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
-//        _isPullDown = YES;
-//        weakself.page=1;
-//        [weakself loadDataSource];
-//        
-//    }];
-//    
-//    
-//}
-//-(void)EndRefresh {
-//    if (_isloadMore) {
-//        [self.tableView footerEndRefreshing];
-//        _isloadMore = NO;
-//    }else if (_isPullDown)
-//    {
-//        [self.tableView headerEndRefreshingWithResult:(JHRefreshResultSuccess)];
-//        _isPullDown = NO;
-//    }
-//    
-//    
-//    
-//}
+/**
+ *  上拉加载
+ */
+-(void)createPullFootRefresh {
+    __weak VideoViewController *weakself = self;
+    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
+        _isloadMore = YES;
+        weakself.page++;
+        [weakself loadDataSource];
+    }];
+    
+    
+}
+/**
+ *  下拉刷新
+ */
+-(void)createPullHeadRefresh {
+    
+    __weak VideoViewController *weakself = self;
+    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshAmazingAniView class] beginRefresh:^{
+        _isPullDown = YES;
+        weakself.page=1;
+        [weakself loadDataSource];
+        
+    }];
+    
+    
+}
+-(void)EndRefresh {
+    if (_isloadMore) {
+        [self.tableView footerEndRefreshing];
+        _isloadMore = NO;
+    }else if (_isPullDown)
+    {
+        [self.tableView headerEndRefreshingWithResult:(JHRefreshResultSuccess)];
+        _isPullDown = NO;
+    }
+    
+    
+    
+}
 
 /**
  *  创建tableView

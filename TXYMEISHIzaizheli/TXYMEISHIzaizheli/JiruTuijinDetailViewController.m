@@ -12,6 +12,7 @@
 #import "MMLinearProgressView.h"
 #import <WebKit/WebKit.h>
 #import "MyfavourViewController.h"
+#import "DataBaseManger.h"
 @interface JiruTuijinDetailViewController ()<WKNavigationDelegate>
 {
     WKWebView *_webView;
@@ -42,11 +43,21 @@ self.navigationController.navigationBarHidden = NO;
 
 }
 -(void)favourbtnPressed:(UIBarButtonItem*)item {
-    MyfavourViewController *vc = [[MyfavourViewController alloc]init];
+    BOOL isExist = [[DataBaseManger shareManager] isExistInfoForid:_model.id];
     
-    [vc.dataSource addObject:_model];
-    
-    
+    if (isExist == YES) {
+        [[DataBaseManger shareManager] deleteStudent:_model];
+        [item setTitle:@"收藏"];
+        NSLog(@"111111111");
+        isExist = NO;
+    }else {
+        [[DataBaseManger shareManager]insertStudent:_model ];
+        [item setTitle:@"取消收藏"];
+        NSLog(@"222222222");
+
+        isExist = YES;
+    }
+    NSLog(@"1.........11%@",_model);
 }
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
@@ -65,7 +76,7 @@ self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    NSLog(@"webView 完成加载");
+//    NSLog(@"webView 完成加载");
     if (self.timer) {
         [self.timer invalidate];//终止
         self.timer = nil;

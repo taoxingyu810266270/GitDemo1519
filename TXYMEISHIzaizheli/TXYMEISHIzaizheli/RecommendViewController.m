@@ -144,13 +144,13 @@
             
             UILabel *iamgetitle =[[UILabel alloc]initWithFrame:CGRectMake(10, 80, view.frame.size.width-20, 30)];
             iamgetitle.text =model.title;
-            iamgetitle.textColor = [UIColor blackColor];
+            iamgetitle.textColor = [UIColor whiteColor];
             iamgetitle.font = [UIFont systemFontOfSize:20];
             
             UILabel *iamgedescr =[[UILabel alloc]initWithFrame:CGRectMake(10, 110, view.frame.size.width-20, 20)];
             
             iamgedescr.text =model.descr;
-            iamgedescr.textColor = [UIColor blackColor];
+            iamgedescr.textColor = [UIColor whiteColor];
             iamgedescr.font = [UIFont systemFontOfSize:12];
 
             [imageview addSubview:iamgetitle];
